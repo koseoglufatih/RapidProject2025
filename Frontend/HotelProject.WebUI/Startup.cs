@@ -26,6 +26,8 @@ namespace HotelProject.WebUI
         {
             if (env.IsDevelopment())
             {
+                app.UseStaticFiles();
+
                 app.UseDeveloperExceptionPage();
             }
             else
