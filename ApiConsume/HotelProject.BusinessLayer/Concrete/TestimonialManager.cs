@@ -23,7 +23,7 @@ namespace HotelProject.BusinessLayer.Concrete
             return _testimonialDal.GetById(id);
         }
 
-        public List<Testimonial> GetList()
+        public List<Testimonial> TGetList()
         {
            return _testimonialDal.GetList();
         }

@@ -23,7 +23,7 @@ namespace HotelProject.BusinessLayer.Concrete
             return _roomdal.GetById(id);
         }
 
-        public List<Room> GetList()
+        public List<Room> TGetList()
         {
             return _roomdal.GetList();
         }
