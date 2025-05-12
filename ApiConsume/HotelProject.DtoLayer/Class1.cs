@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HotelProject.DtoLayer
+﻿namespace HotelProject.DtoLayer
 {
     public class Class1
     {
