@@ -26,26 +26,30 @@ namespace HotelProject.WebApi.Controllers
         [HttpPost]
         public IActionResult AddStaff(Staff staff)
         {
-           _staffService.TInsert(staff);
+            _staffService.TInsert(staff);
             return Ok();
         }
 
         [HttpDelete]
-        public IActionResult DeleteStaff()
+        public IActionResult DeleteStaff(int id)
         {
+            var values = _staffService.GetById(id);
+            _staffService.TDelete(values);
             return Ok();
         }
 
         [HttpPut]
-        public IActionResult UpdateStaff()
+        public IActionResult UpdateStaff(Staff staff)
         {
-            return Ok();
+            _staffService.Update(staff);
+            return Ok();    
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetStaff()
+        public IActionResult GetStaff(int id)
         {
-            return Ok();
+            var values = _staffService.GetById(id);
+            return Ok(values);
         }
     }
 }
