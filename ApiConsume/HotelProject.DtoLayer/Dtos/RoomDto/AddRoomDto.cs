@@ -2,7 +2,7 @@
 
 namespace HotelProject.DtoLayer.Dtos.RoomDto
 {
-    public class RoomAddDto
+    public class AddRoomDto
     {
         [Required(ErrorMessage = "Lütfen oda numarası giriniz:")]
         public string RoomNumber { get; set; }
