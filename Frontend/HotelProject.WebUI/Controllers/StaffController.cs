@@ -50,5 +50,17 @@ namespace HotelProject.WebUI.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteStaff(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.DeleteAsync($"http://localhost:56810/api/Staff/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
