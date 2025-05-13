@@ -23,7 +23,7 @@ namespace HotelProject.WebUI.Controllers
             var responseMessage = await client.GetAsync("http://localhost:56810/api/Staff");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData= await responseMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
                 return View(values);
             }
@@ -41,8 +41,8 @@ namespace HotelProject.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await client.PostAsync("http://localhost:56810/api/Staff",stringContent);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:56810/api/Staff", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -70,7 +70,7 @@ namespace HotelProject.WebUI.Controllers
             var responseMessage = await client.GetAsync($"http://localhost:56810/api/Staff/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData= await responseMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<UpdateStaffViewModel>(jsonData);
                 return View(values);
 
@@ -84,8 +84,8 @@ namespace HotelProject.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(model);
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
-            var responseMessage = await client.PutAsync("http://localhost:56810/api/Staff/",stringContent);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PutAsync("http://localhost:56810/api/Staff/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

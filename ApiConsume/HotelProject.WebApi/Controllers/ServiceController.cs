@@ -1,6 +1,5 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.WebApi.Controllers
@@ -11,7 +10,7 @@ namespace HotelProject.WebApi.Controllers
     {
         private readonly IServiceService _serviceService;
 
-        public ServiceController(IServiceService  serviceService)
+        public ServiceController(IServiceService serviceService)
         {
             _serviceService = serviceService;
         }

@@ -1,6 +1,5 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HotelProject.WebApi.Controllers
@@ -42,7 +41,7 @@ namespace HotelProject.WebApi.Controllers
         public IActionResult UpdateStaff(Staff staff)
         {
             _staffService.Update(staff);
-            return Ok();    
+            return Ok();
         }
 
         [HttpGet("{id}")]

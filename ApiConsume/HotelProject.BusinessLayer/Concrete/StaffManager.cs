@@ -1,11 +1,7 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using HotelProject.DataAccessLayer.Abstract;
 using HotelProject.EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
@@ -20,7 +16,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public Staff GetById(int id)
         {
-           return _staffDal.GetById(id);
+            return _staffDal.GetById(id);
         }
 
         public List<Staff> TGetList()
@@ -30,12 +26,12 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TDelete(Staff t)
         {
-           _staffDal.Delete(t);
+            _staffDal.Delete(t);
         }
 
         public void TInsert(Staff t)
         {
-           _staffDal.Insert(t);
+            _staffDal.Insert(t);
         }
 
         public void Update(Staff t)

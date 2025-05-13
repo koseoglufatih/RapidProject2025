@@ -36,12 +36,12 @@ namespace HotelProject.WebApi
             services.AddScoped<IRoomService, RoomManager>();
 
             services.AddScoped<ISubscribeDal, EfSubscribeDal>();
-            services.AddScoped<ISubscribeService,SubscribeManager>();
+            services.AddScoped<ISubscribeService, SubscribeManager>();
 
-            services.AddScoped<ITestimonialDal,EfTestimonialDal>();
+            services.AddScoped<ITestimonialDal, EfTestimonialDal>();
             services.AddScoped<ITestimonailService, TestimonialManager>();
 
-            services.AddCors(opt=>
+            services.AddCors(opt =>
             {
                 opt.AddPolicy("OtelApiCors", opts =>
                 {
