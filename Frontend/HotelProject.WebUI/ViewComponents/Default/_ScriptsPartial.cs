@@ -2,7 +2,7 @@
 
 namespace HotelProject.WebUI.ViewComponents.Default
 {
-    public class : ViewComponent
+    public class _ScriptsPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
