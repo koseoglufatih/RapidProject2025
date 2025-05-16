@@ -1,3 +1,9 @@
 Api testi ve swagger -- yapýldý
-temayý ekleme
-register - login iþlemleri
+temayý ekleme yapýldý
+register - login iþlemleri yapýldý
+
+
+Onay Bekliyor
+Onaylandý
+Ýptal edildi
+Bekletiliyor

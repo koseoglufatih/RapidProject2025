@@ -12,7 +12,7 @@ using Microsoft.Win32.SafeHandles;
 
 namespace HotelProject.WebUI.Mapping
 {
-    public class AutoMapperConfig :Profile
+    public class AutoMapperConfig : Profile
     {
         public AutoMapperConfig()
         {
@@ -33,6 +33,8 @@ namespace HotelProject.WebUI.Mapping
             CreateMap<CreateSubscribeDto, Subscribe>().ReverseMap();
 
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
+            CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
+
 
 
 
