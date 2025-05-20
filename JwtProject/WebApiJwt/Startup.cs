@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System;
 using System.Text;
 
 namespace WebApiJwt
@@ -27,11 +28,12 @@ namespace WebApiJwt
                 opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidIssuer= "http://locahost",
-                    ValidAudience= "http://locahost",
+                    ValidIssuer= "http://localhost",
+                    ValidAudience= "http://localhost",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapi")),
                     ValidateIssuer = true,
-                    ValidateLifetime = true
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero
                 };
             });
             
@@ -54,6 +56,7 @@ namespace WebApiJwt
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
