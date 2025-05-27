@@ -22,12 +22,14 @@ namespace HotelProject.WebUI
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        [System.Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Context>();
             services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
             services.AddHttpClient();
             services.AddTransient<IValidator<CreateGuestDto>,CreateGuestValidator>();
+            services.AddTransient<IValidator<UpdateGuestDto>,UpdateGuestValidator>();
             services.AddControllersWithViews().AddFluentValidation();
             services.AddAutoMapper(typeof(Startup));
         }
