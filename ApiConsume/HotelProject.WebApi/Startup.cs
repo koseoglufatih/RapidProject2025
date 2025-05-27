@@ -51,6 +51,9 @@ namespace HotelProject.WebApi
             services.AddScoped<IBookingDal, EfBookingDal>();
             services.AddScoped<IBookingService, BookingManager>();
 
+            services.AddScoped<IGuestDal, EfGuestDal>();
+            services.AddScoped<IGuestService, GuestManager>();
+
 
 
 
