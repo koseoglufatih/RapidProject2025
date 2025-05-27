@@ -16,6 +16,6 @@ namespace HotelProject.DataAccessLayer.EF
         {
 
         }
-    {
+    
     }
 }
