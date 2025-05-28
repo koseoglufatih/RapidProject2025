@@ -54,7 +54,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> DeleteWorkLocation(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"http://localhost:56810/api/Room/{id}");
+            var responseMessage = await client.DeleteAsync($"http://localhost:56810/api/WorkLocation/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -66,11 +66,11 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> UpdateWorkLocation(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:56810/api/Room/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:56810/api/WorkLocation/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<UpdateRoomDto>(jsonData);
+                var values = JsonConvert.DeserializeObject<UpdateWorkLocationDto>(jsonData);
                 return View(values);
 
             }
@@ -79,12 +79,12 @@ namespace HotelProject.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateWorkLocation(UpdateRoomDto updateRoomDto)
+        public async Task<IActionResult> UpdateWorkLocation(UpdateWorkLocationDto updateWorkLocationDto)
         {
             var client = _httpClientFactory.CreateClient();
-            var jsonData = JsonConvert.SerializeObject(updateRoomDto);
+            var jsonData = JsonConvert.SerializeObject(updateWorkLocationDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("http://localhost:56810/api/Room/", stringContent);
+            var responseMessage = await client.PutAsync("http://localhost:56810/api/WorkLocation/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
