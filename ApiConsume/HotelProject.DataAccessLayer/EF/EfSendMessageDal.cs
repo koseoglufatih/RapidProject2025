@@ -2,6 +2,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
+using System.Linq;
 
 namespace HotelProject.DataAccessLayer.EF
 {
@@ -12,5 +13,10 @@ namespace HotelProject.DataAccessLayer.EF
             
         }
 
+        public int GetSendMessageCount()
+        {
+            var context = new Context();
+            return context.SendMessages.Count();
+        }
     }
 }
