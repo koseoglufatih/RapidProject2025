@@ -25,7 +25,7 @@ namespace HotelProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(CreateNewUserDto createNewUserDto)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View();
             }
@@ -37,7 +37,7 @@ namespace HotelProject.WebUI.Controllers
                 UserName = createNewUserDto.Username
             };
 
-            var result = await _userManager.CreateAsync(appUser,createNewUserDto.Password);
+            var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);
             if (result.Succeeded)
             {
                 return RedirectToAction("Index", "Login");

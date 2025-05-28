@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HotelProject.DataAccessLayer.Concrete
 {
-    public class Context : IdentityDbContext<AppUser,AppRole,int>
+    public class Context : IdentityDbContext<AppUser, AppRole, int>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -24,4 +24,4 @@ namespace HotelProject.DataAccessLayer.Concrete
         public DbSet<MessageCategory> MessageCategories { get; set; }
     }
 }
-    
+

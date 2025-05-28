@@ -1,9 +1,7 @@
-﻿using HotelProject.WebUI.Dtos.ServiceDto;
-using HotelProject.WebUI.Dtos.SubscribeDto;
+﻿using HotelProject.WebUI.Dtos.SubscribeDto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,7 +32,7 @@ namespace HotelProject.WebUI.Controllers
             var jsonData = JsonConvert.SerializeObject(createSubscribeDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
             await client.PostAsync("http://localhost:56810/api/Subscribe", stringContent);
-            return RedirectToAction("Index","Default");
+            return RedirectToAction("Index", "Default");
         }
     }
 }

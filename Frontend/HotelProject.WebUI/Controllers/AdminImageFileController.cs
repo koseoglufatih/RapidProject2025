@@ -20,7 +20,7 @@ namespace HotelProject.WebUI.Controllers
         {
             var stream = new MemoryStream();
             await file.CopyToAsync(stream);
-            var bytes = stream.ToArray();   
+            var bytes = stream.ToArray();
 
             ByteArrayContent byteArrayContent = new ByteArrayContent(bytes);
             byteArrayContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
@@ -29,7 +29,7 @@ namespace HotelProject.WebUI.Controllers
                 { byteArrayContent, "file", file.FileName }
             };
             var httpClient = new HttpClient();
-            var responseMessage = await httpClient.PostAsync("http://localhost:56810/api/FileImage",multipartContent);
+            var responseMessage = await httpClient.PostAsync("http://localhost:56810/api/FileImage", multipartContent);
             return View();
         }
     }

@@ -6,11 +6,11 @@ using System.Linq;
 
 namespace HotelProject.DataAccessLayer.EF
 {
-    public class EfSendMessageDal : GenericRepository<SendMessage> , ISendMessageDal
+    public class EfSendMessageDal : GenericRepository<SendMessage>, ISendMessageDal
     {
         public EfSendMessageDal(Context context) : base(context)
         {
-            
+
         }
 
         public int GetSendMessageCount()

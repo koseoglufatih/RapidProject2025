@@ -2,7 +2,7 @@
 
 namespace HotelProject.WebUI.ViewComponents.Contact
 {
-    public class _ContactCoverPartial :ViewComponent
+    public class _ContactCoverPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

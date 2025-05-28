@@ -2,12 +2,12 @@
 {
     public class ExchangeViewModel
     {
-        
-            public bool status { get; set; }
-            public string message { get; set; }
-            public long timestamp { get; set; }
-            public Datum[] data { get; set; }
-       
+
+        public bool status { get; set; }
+        public string message { get; set; }
+        public long timestamp { get; set; }
+        public Datum[] data { get; set; }
+
 
         public class Datum
         {

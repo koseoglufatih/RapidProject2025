@@ -13,11 +13,11 @@ namespace HotelProject.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> UploadImage([FromForm] IFormFile file)
         {
-            var fileName = Guid.NewGuid()+Path.GetExtension(file.FileName);
-            var path = Path.Combine(Directory.GetCurrentDirectory(),"images/"+fileName);
-            var stream = new FileStream(path,FileMode.Create);
+            var fileName = Guid.NewGuid() + Path.GetExtension(file.FileName);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "images/" + fileName);
+            var stream = new FileStream(path, FileMode.Create);
             await file.CopyToAsync(stream);
-            return Created("",file);
+            return Created("", file);
         }
     }
 }

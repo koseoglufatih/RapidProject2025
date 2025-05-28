@@ -1,5 +1,3 @@
-using System;
-
 namespace RapidApiConsume.Models
 {
     public class ErrorViewModel

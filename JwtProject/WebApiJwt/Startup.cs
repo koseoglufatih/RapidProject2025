@@ -28,15 +28,15 @@ namespace WebApiJwt
                 opt.RequireHttpsMetadata = false;
                 opt.TokenValidationParameters = new TokenValidationParameters()
                 {
-                    ValidIssuer= "http://localhost",
-                    ValidAudience= "http://localhost",
+                    ValidIssuer = "http://localhost",
+                    ValidAudience = "http://localhost",
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("aspnetcoreapiapi")),
                     ValidateIssuer = true,
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.Zero
                 };
             });
-            
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

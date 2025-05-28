@@ -8,7 +8,7 @@ namespace HotelProject.WebApi.Controllers
     [ApiController]
     public class GuestController : ControllerBase
     {
-        private readonly  IGuestService _guestService;
+        private readonly IGuestService _guestService;
 
         public GuestController(IGuestService guestService)
         {

@@ -1,12 +1,10 @@
-﻿using HotelProject.WebUI.Models.Staff;
-using HotelProject.WebUI.Models;
+﻿using HotelProject.WebUI.Dtos.RoomDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using HotelProject.WebUI.Dtos.RoomDto;
 
 namespace HotelProject.WebUI.Controllers
 {

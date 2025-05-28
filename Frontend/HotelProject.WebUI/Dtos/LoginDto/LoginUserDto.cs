@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace HotelProject.WebUI.Dtos.LoginDto
 {
     public class LoginUserDto
     {
-        [Required(ErrorMessage ="Kullanıcı Adını Giriniz")]
+        [Required(ErrorMessage = "Kullanıcı Adını Giriniz")]
         public string UserName { get; set; }
 
         [Required(ErrorMessage = "Şifreyi Giriniz")]

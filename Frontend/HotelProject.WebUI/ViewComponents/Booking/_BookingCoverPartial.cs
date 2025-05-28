@@ -2,12 +2,12 @@
 
 namespace HotelProject.WebUI.ViewComponents.Booking
 {
-    public class _BookingCoverPartial :ViewComponent
+    public class _BookingCoverPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
 
-        return View(); 
+            return View();
         }
     }
 }

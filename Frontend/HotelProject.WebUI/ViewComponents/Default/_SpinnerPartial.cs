@@ -2,7 +2,7 @@
 
 namespace HotelProject.WebUI.ViewComponents.Default
 {
-    public class _SpinnerPartial :ViewComponent
+    public class _SpinnerPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {

@@ -4,9 +4,9 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
 {
     public class CreateNewUserDto
     {
-        [Required(ErrorMessage ="Ad Alanı Gereklidir")]
+        [Required(ErrorMessage = "Ad Alanı Gereklidir")]
         public string Name { get; set; }
-        
+
         [Required(ErrorMessage = "Soyad Alanı Gereklidir")]
         public string Surname { get; set; }
 
@@ -20,7 +20,7 @@ namespace HotelProject.WebUI.Dtos.RegisterDto
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Şifre Tekrar Alanı Gereklidir")]
-        [Compare("Password",ErrorMessage ="Şifreler aynı olmalıdır")]
+        [Compare("Password", ErrorMessage = "Şifreler aynı olmalıdır")]
         public string ConfirmPassword { get; set; }
     }
 }
