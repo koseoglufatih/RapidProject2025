@@ -4,6 +4,7 @@ using HotelProject.WebUI.Models;
 using HotelProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -41,10 +42,13 @@ namespace HotelProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSendMessage(CreateSendMesssageDto dto)
         {
+            dto.SenderMail = "admin@gmail.com";
+            dto.SenderName = "admin";
+            dto.Date= DateTime.Parse(DateTime.Now.ToShortDateString());
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(dto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("http://localhost:56810/api/SendMessage", stringContent);
+            var responseMessage = await client.PostAsync("http://localhost:56810/api/AddSendMessage", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("SendBox");
