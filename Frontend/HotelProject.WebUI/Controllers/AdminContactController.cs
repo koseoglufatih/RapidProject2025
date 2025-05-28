@@ -59,7 +59,7 @@ namespace HotelProject.WebUI.Controllers
         {
             dto.SenderMail = "admin@gmail.com";
             dto.SenderName = "admin";
-            dto.Date= DateTime.Parse(DateTime.Now.ToShortDateString());
+            dto.Date = DateTime.Parse(DateTime.Now.ToShortDateString());
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(dto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -77,6 +77,13 @@ namespace HotelProject.WebUI.Controllers
         public PartialViewResult SideBarAdminContactCategoryPartial()
         {
             return PartialView();
+        }
+
+        public IActionResult MessageDetails(int id)
+        {
+            id = 0;
+            return View();
+
         }
     }
 }
