@@ -1,9 +1,12 @@
 ﻿using HotelProject.WebUI.Dtos.ContactDto;
+using HotelProject.WebUI.Dtos.SendMessageDto;
 using HotelProject.WebUI.Models;
+using HotelProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace HotelProject.WebUI.Controllers
@@ -28,13 +31,30 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
-      
 
+        [HttpGet]
+        public IActionResult AddSendMessage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddSendMessage(CreateSendMesssageDto dto)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData = JsonConvert.SerializeObject(dto);
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync("http://localhost:56810/api/SendMessage", stringContent);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("SendBox");
+            }
+            return View();
+        }
         public PartialViewResult SideBarAdminContactPartial()
         {
             return PartialView();
         }
-
         public PartialViewResult SideBarAdminContactCategoryPartial()
         {
             return PartialView();
