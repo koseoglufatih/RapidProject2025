@@ -28,6 +28,11 @@ namespace HotelProject.BusinessLayer.Concrete
            _contactDal.Delete(t);
         }
 
+        public int TGetContactCount()
+        {
+            return _contactDal.GetContactCount();
+        }
+
         public List<Contact> TGetList()
         {
            return _contactDal.GetList();
