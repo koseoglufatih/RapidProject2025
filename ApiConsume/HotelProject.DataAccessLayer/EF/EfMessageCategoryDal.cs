@@ -5,12 +5,10 @@ using HotelProject.EntityLayer.Concrete;
 
 namespace HotelProject.DataAccessLayer.EF
 {
-    public class EfGuestDal : GenericRepository<Guest>, IGuestDal
+    public class EfMessageCategoryDal : GenericRepository<MessageCategory>, IMessageCategoryDal
     {
-        public EfGuestDal(Context context) : base(context)
+        public EfMessageCategoryDal(Context context) : base(context)
         {
-
         }
-    
     }
 }
