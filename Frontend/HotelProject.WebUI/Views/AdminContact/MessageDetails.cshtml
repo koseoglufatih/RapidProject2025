@@ -1,4 +1,4 @@
-﻿
+﻿@model GetMessageByIDDto
 @{
     ViewData["Title"] = "MessageDetails";
     Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
@@ -24,7 +24,7 @@
         <div class="media pt-5">
             <img class="mr-3 rounded-circle" src="~/adminweb/images/avatar/1.jpg">
             <div class="media-body">
-                <h5 class="m-b-3">Fatih Köseoğlu</h5>
+                <h5 class="m-b-3">@Model.Name</h5>
                 <p class="m-b-2">20 May 2018</p>
             </div>
 
