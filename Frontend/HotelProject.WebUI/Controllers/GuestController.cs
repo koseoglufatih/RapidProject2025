@@ -7,9 +7,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using HotelProject.WebUI.Dtos.GuestDto;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HotelProject.WebUI.Controllers
 {
+
     public class GuestController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

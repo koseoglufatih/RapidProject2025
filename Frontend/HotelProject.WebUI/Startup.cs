@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Org.BouncyCastle.Asn1.Cms;
+using System;
 
 namespace HotelProject.WebUI
 {
@@ -40,6 +42,13 @@ namespace HotelProject.WebUI
                 .RequireAuthenticatedUser()
                 .Build();
                 config.Filters.Add(new AuthorizeFilter(policy));
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+                options.LoginPath = "/Login/Index/";
             });
         }
 
