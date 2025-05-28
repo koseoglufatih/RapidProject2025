@@ -82,7 +82,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> MessageDetails(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"http://localhost:56810/api/Contact/{id}");
+            var responseMessage = await client.GetAsync($"http://localhost:56810/api/SendMessage/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
