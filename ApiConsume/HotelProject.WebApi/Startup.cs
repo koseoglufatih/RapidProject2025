@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace HotelProject.WebApi
 {
@@ -47,7 +48,6 @@ namespace HotelProject.WebApi
             services.AddScoped<IContactDal, EfContactDal>();
             services.AddScoped<IContactService, ContactManager>();
 
-
             services.AddScoped<IBookingDal, EfBookingDal>();
             services.AddScoped<IBookingService, BookingManager>();
 
@@ -62,6 +62,9 @@ namespace HotelProject.WebApi
 
             services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
             services.AddScoped<IWorkLocationService, WorkLocationManager>();
+
+            services.AddScoped<IAppUserDal, EfAppUserDal>();
+            services.AddScoped<IAppUserService, AppUserManager>();
 
 
 
@@ -78,7 +81,10 @@ namespace HotelProject.WebApi
                 });
             });
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+         
+           
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelProject.WebApi", Version = "v1" });
