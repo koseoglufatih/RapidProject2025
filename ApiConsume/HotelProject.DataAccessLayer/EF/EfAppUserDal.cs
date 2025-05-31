@@ -26,7 +26,7 @@ namespace HotelProject.DataAccessLayer.EF
         public List<AppUser> UsersListWithWorkLocations()
         {
             var context = new Context();
-            var values = context.Users.Include(x=x=>x.WorkLocation).ToList();
+            var values = context.Users.Include(x=>x.WorkLocation).ToList();
             return values;  
         }
     }
