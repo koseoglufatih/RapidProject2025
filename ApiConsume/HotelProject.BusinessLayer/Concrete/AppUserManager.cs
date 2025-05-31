@@ -43,6 +43,11 @@ namespace HotelProject.BusinessLayer.Concrete
             return _appUserDal.UserListWithWorkLocation();
         }
 
+        public List<AppUser> TUsersListWithWorkLocations()
+        {
+            return _appUserDal.UsersListWithWorkLocations();
+        }
+
         public void Update(AppUser t)
         {
             _appUserDal.Update(t);  
