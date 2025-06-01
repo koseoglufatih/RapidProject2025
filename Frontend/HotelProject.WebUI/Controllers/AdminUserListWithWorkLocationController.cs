@@ -1,24 +1,18 @@
-﻿using HotelProject.EntityLayer.Concrete;
-using HotelProject.WebUI.Dtos.AppUserDto;
-using HotelProject.WebUI.Dtos.RoomDto;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
+﻿using HotelProject.WebUI.Dtos.AppUserDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace HotelProject.WebUI.Controllers
 {
-    [AllowAnonymous]
-    public class AdminUsersController : Controller
+    public class AdminUserListWithWorkLocationController : Controller
     {
-    
+
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminUsersController(IHttpClientFactory httpClientFactory)
+        public AdminUserListWithWorkLocationController(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
