@@ -43,5 +43,10 @@ namespace HotelProject.BusinessLayer.Concrete
         {
             return (_staffDal.GetStaffCount()); 
         }
+
+        public List<Staff> TLast4Satff()
+        {
+            return _staffDal.Last4Staff();
+        }
     }
 }
