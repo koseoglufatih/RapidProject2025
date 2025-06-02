@@ -1,5 +1,4 @@
-﻿using HotelProject.EntityLayer.Concrete;
-using System;
+﻿using System;
 
 namespace HotelProject.WebUI.Dtos.ContactDto
 {

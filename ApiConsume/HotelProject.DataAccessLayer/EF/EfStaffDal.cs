@@ -2,6 +2,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
+using System.Linq;
 
 namespace HotelProject.DataAccessLayer.EF
 {
@@ -9,6 +10,12 @@ namespace HotelProject.DataAccessLayer.EF
     {
         public EfStaffDal(Context context) : base(context)
         {
+        }
+        public int GetStaffCount()
+        {
+            using var context = new Context();
+            var value = context.Staffs.Count();
+            return value;
         }
     }
 }

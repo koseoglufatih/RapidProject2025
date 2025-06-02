@@ -31,7 +31,7 @@ namespace HotelProject.BusinessLayer.Concrete
 
         public void TInsert(WorkLocation t)
         {
-           _workLocationDal.Insert(t);
+            _workLocationDal.Insert(t);
         }
 
         public void Update(WorkLocation t)

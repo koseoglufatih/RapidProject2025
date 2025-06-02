@@ -1,6 +1,5 @@
 ﻿using HotelProject.WebUI.Dtos.ContactDto;
 using HotelProject.WebUI.Dtos.MessageCategoryDto;
-using HotelProject.WebUI.Dtos.RoomDto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -33,7 +32,7 @@ namespace HotelProject.WebUI.Controllers
                                             select new SelectListItem
                                             {
                                                 Text = x.MessageCategoryName,
-                                                Value = x.MessageCategoryID.ToString()  
+                                                Value = x.MessageCategoryID.ToString()
                                             }).ToList();
             ViewBag.v = values2;
             return View();

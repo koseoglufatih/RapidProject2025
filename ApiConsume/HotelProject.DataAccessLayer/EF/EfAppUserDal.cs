@@ -3,11 +3,8 @@ using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HotelProject.DataAccessLayer.EF
 {
@@ -26,8 +23,8 @@ namespace HotelProject.DataAccessLayer.EF
         public List<AppUser> UsersListWithWorkLocations()
         {
             var context = new Context();
-            var values = context.Users.Include(x=>x.WorkLocation).ToList();
-            return values;  
+            var values = context.Users.Include(x => x.WorkLocation).ToList();
+            return values;
         }
     }
 }
