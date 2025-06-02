@@ -1,4 +1,5 @@
 ﻿using HotelProject.EntityLayer.Concrete;
+using System.Collections.Generic;
 
 namespace HotelProject.DataAccessLayer.Abstract
 {
@@ -7,5 +8,6 @@ namespace HotelProject.DataAccessLayer.Abstract
         void BookingStatusChangeApproved(Booking booking);
         void BookingStatusChangeApproved2(int id);
         int GetBookingCount();
+        List<Booking> Last6Bookings();
     }
 }

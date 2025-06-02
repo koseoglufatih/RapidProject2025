@@ -2,6 +2,7 @@
 using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.DataAccessLayer.Repositories;
 using HotelProject.EntityLayer.Concrete;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HotelProject.DataAccessLayer.EF
@@ -34,6 +35,13 @@ namespace HotelProject.DataAccessLayer.EF
             var context = new Context();
             var value = context.Bookings.Count();
             return value;
+        }
+
+        public List<Booking> Last6Bookings()
+        {
+            var context = new Context();
+            var values = context.Bookings.OrderByDescending(x => x.BookingID).Take(6).ToList();
+            return values;
         }
     }
 }
