@@ -1,5 +1,6 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace HotelProject.WebApi.Controllers
 {
@@ -14,6 +15,12 @@ namespace HotelProject.WebApi.Controllers
             _staffService = staffService;
         }
 
+        [HttpGet("StaffCount")]
+        public  IActionResult StaffCount()
+        {
+            var value = _staffService.TGetStaffCount();
+            return Ok(value);
+        }
         
     }
 }
