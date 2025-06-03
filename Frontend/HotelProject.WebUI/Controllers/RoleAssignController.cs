@@ -36,7 +36,7 @@ namespace HotelProject.WebUI.Controllers
             List<RoleAssignViewModel> roleAssignViewModels = new List<RoleAssignViewModel>();
             foreach (var item in roles)
             {
-                RoleAssignViewModel model =new RoleAssignViewModel();
+                RoleAssignViewModel model = new RoleAssignViewModel();
                 model.RoleId = item.Id;
                 model.RoleName = item.Name;
                 model.RoleExist = userRoles.Contains(item.Name);
@@ -44,5 +44,25 @@ namespace HotelProject.WebUI.Controllers
             }
             return View(roleAssignViewModels);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AssignRole(List<RoleAssignViewModel> roleAssignViewModel)
+        {
+            var userid = (int)TempData["userid"];
+            var user = _userManager.Users.FirstOrDefault(x => x.Id == userid);
+            foreach (var item in roleAssignViewModel)
+            {
+                if (item.RoleExist)
+                {
+                    await _userManager.AddToRoleAsync(user, item.RoleName);
+                }
+                else
+                {
+                    await _userManager.RemoveFromRoleAsync(user, item.RoleName);    
+                }
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }
