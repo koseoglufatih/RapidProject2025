@@ -1,4 +1,5 @@
-﻿using HotelProject.EntityLayer.Concrete;
+﻿using AspNetCore;
+using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Models.Role;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -39,6 +40,32 @@ namespace HotelProject.WebUI.Controllers
                 return RedirectToAction("Index");
             }
             return View();
+        }
+
+        public async Task<IActionResult> DeleteRole(int id)
+        {
+            var value = _roleManager.Roles.FirstOrDefault(x=> x.Id == id);
+            await _roleManager.DeleteAsync(value);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult UpdateRole(int id)
+        {
+            var value = _roleManager.Roles.FirstOrDefault(x=> x.Id == id);
+            UpdateRoleViewModel updateRoleViewModel = new UpdateRoleViewModel()
+            {
+                RoleId = value.Id,
+                RoleName = value.Name   
+            };
+            return View(updateRoleViewModel);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateRole(UpdateRoleViewModel model)
+        {
+            var values = _roleManager.Roles.FirstOrDefault(x => x.Id == model.RoleId);
+            values.Name = model.RoleName;
+            await _roleManager.UpdateAsync(values);
+            return RedirectToAction("Index");
         }
     }
 }
