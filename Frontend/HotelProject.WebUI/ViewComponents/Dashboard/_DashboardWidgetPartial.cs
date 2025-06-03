@@ -1,7 +1,4 @@
-﻿using HotelProject.WebUI.Dtos.GuestDto;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
 using System.Threading.Tasks;
 

@@ -1,6 +1,5 @@
 ﻿using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Models.Role;
-using HotelProject.WebUI.ViewComponents.Default;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -58,7 +57,7 @@ namespace HotelProject.WebUI.Controllers
                 }
                 else
                 {
-                    await _userManager.RemoveFromRoleAsync(user, item.RoleName);    
+                    await _userManager.RemoveFromRoleAsync(user, item.RoleName);
                 }
             }
             return RedirectToAction("Index");

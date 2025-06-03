@@ -38,6 +38,14 @@ namespace HotelProject.DataAccessLayer.EF
             context.SaveChanges();
         }
 
+        public void BookingStatusChangeCancel(int id)
+        {
+            var context = new Context();
+            var values = context.Bookings.Find(id);
+            values.Status = "İptal edildi";
+            context.SaveChanges();
+        }
+
         public int GetBookingCount()
         {
             var context = new Context();

@@ -1,6 +1,5 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace HotelProject.WebApi.Controllers
 {

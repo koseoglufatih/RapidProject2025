@@ -39,9 +39,9 @@ namespace HotelProject.WebUI.Controllers
             }
             return View();
         }
-    
 
-    public async Task<IActionResult> ApprovedReservation(ApprovedReservationDto dto)
+
+        public async Task<IActionResult> ApprovedReservation(ApprovedReservationDto dto)
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(dto);

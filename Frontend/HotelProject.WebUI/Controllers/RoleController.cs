@@ -43,18 +43,18 @@ namespace HotelProject.WebUI.Controllers
 
         public async Task<IActionResult> DeleteRole(int id)
         {
-            var value = _roleManager.Roles.FirstOrDefault(x=> x.Id == id);
+            var value = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
             await _roleManager.DeleteAsync(value);
             return RedirectToAction("Index");
         }
         [HttpGet]
         public IActionResult UpdateRole(int id)
         {
-            var value = _roleManager.Roles.FirstOrDefault(x=> x.Id == id);
+            var value = _roleManager.Roles.FirstOrDefault(x => x.Id == id);
             UpdateRoleViewModel updateRoleViewModel = new UpdateRoleViewModel()
             {
                 RoleId = value.Id,
-                RoleName = value.Name   
+                RoleName = value.Name
             };
             return View(updateRoleViewModel);
         }

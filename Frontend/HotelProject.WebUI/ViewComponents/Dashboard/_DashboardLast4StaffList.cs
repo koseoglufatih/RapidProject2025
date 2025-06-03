@@ -1,5 +1,4 @@
-﻿using HotelProject.WebUI.Dtos.GuestDto;
-using HotelProject.WebUI.Dtos.StaffDto;
+﻿using HotelProject.WebUI.Dtos.StaffDto;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.WebUI.ViewComponents.Dashboard
 {
-    public class _DashboardLast4StaffList :ViewComponent
+    public class _DashboardLast4StaffList : ViewComponent
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
@@ -28,6 +27,6 @@ namespace HotelProject.WebUI.ViewComponents.Dashboard
             }
             return View();
         }
-      
+
     }
 }

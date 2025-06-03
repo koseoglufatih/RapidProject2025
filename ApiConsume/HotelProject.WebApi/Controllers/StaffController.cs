@@ -55,6 +55,6 @@ namespace HotelProject.WebApi.Controllers
         {
             var values = _staffService.TLast4Satff();
             return Ok(values);
-        }  
+        }
     }
 }

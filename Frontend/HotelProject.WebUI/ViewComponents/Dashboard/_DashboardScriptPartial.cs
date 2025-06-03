@@ -2,7 +2,7 @@
 
 namespace HotelProject.WebUI.ViewComponents.Dashboard
 {
-    public class _DashboardScriptPartial :ViewComponent
+    public class _DashboardScriptPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
