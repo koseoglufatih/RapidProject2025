@@ -1,5 +1,4 @@
-﻿using AspNetCore;
-using HotelProject.EntityLayer.Concrete;
+﻿using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Models.Role;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
